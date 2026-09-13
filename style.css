@@ -1,1 +1,147 @@
+* { box-sizing: border-box; }
 
+body {
+  margin: 0;
+  background: #000 url('tape-bg.png') center center / cover no-repeat fixed;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+/*---Tape---*/
+.tape-edge {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 90px;         /* outer tape width */
+    padding: 0 16px;     /* horizontal-only padding: creates the side gap without shortening the border vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8c313; /* yellow tape fill */
+}
+
+  .tapeL { left: 0; }
+  .tapeR { right: 0; }
+ 
+.inner-border {
+    width: 100%;
+    height: 100%;        /* full 100vh, since the tape has no top/bottom padding now */
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    /* no border-top / border-bottom — these two lines run the full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.rotated-text {
+    writing-mode: vertical-rl;  /* makes the text flow top-to-bottom */
+    transform: rotate(180deg);  /* flip so it reads bottom-to-top instead of top-to-bottom (remove if you prefer the default direction) */
+    white-space: nowrap;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+ 
+/* ---------- Content ---------- */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px 70px;
+  text-align: center;
+}
+
+.school-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 10px 0 4px;
+  color: #f2f2f2;
+}
+
+.main-title {
+  font-family: 'Keania One', cursive;
+  font-weight: 400;
+  font-size: 46px;
+  letter-spacing: 2px;
+  color: #cf1b1b;
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  color: #2fd35a;
+  margin: 0 0 40px;
+}
+
+.departments-label {
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 32px;
+  color: #f2f2f2;
+  margin: 0 0 30px;
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dept-box {
+  border: 2px solid #fff;
+  border-radius: 24px;
+  padding: 12px 22px;
+  min-width: 130px;
+  max-width: 220px;
+  flex: 1 1 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  line-height: 1.35;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.dept-box:hover,
+.dept-box.active {
+  background: var(--box-color);
+  border-color: var(--box-color);
+  color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px -2px var(--box-color);
+}
+
+@media (max-width: 700px) {
+  .main-title { font-size: 30px; letter-spacing: 1px; }
+  .subtitle { font-size: 16px; }
+  .departments-label { font-size: 24px; }
+  .dept-box { font-size: 11px; min-width: 110px; }
+}
+
+.ph{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #f2f2f2;
+}
