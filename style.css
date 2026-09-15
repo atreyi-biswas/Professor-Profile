@@ -8,43 +8,6 @@ body {
   position: relative;
   min-height: 100vh;
 }
-/*---Tape---*/
-.tape-edge {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 90px;         /* outer tape width */
-    padding: 0 16px;     /* horizontal-only padding: creates the side gap without shortening the border vertically */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #e8c313; /* yellow tape fill */
-}
-
-  .tapeL { left: 0; }
-  .tapeR { right: 0; }
- 
-.inner-border {
-    width: 100%;
-    height: 100%;        /* full 100vh, since the tape has no top/bottom padding now */
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
-    /* no border-top / border-bottom — these two lines run the full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.rotated-text {
-    writing-mode: vertical-rl;  /* makes the text flow top-to-bottom */
-    transform: rotate(180deg);  /* flip so it reads bottom-to-top instead of top-to-bottom (remove if you prefer the default direction) */
-    white-space: nowrap;
-    color: #000;
-    font-family: sans-serif;
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
  
 /* ---------- Content ---------- */
 .page {
