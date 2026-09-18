@@ -267,26 +267,10 @@
       </div>
 
       <div class="btn-wrap">
-        <button class="suspect-btn" id="suspectBtn" type="button" onclick location.href="TP_profile.html">View Suspect Profile</button>
+        <button class="suspect-btn" id="suspectBtn" type="button" onclick="location.href='TP_profile.html'">View Suspect Profile</button>
       </div>
     </article>
   </main>
-
-
-<script>
-  const btn = document.getElementById('suspectBtn');
-  const overlay = document.getElementById('modalOverlay');
-  const closeBtn = document.getElementById('modalClose');
-
-  btn.addEventListener('click', () => overlay.classList.add('open'));
-  closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('open');
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') overlay.classList.remove('open');
-  });
-</script>
 
 </body>
 </html>
